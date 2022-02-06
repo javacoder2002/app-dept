@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClientSevice {
+public class ClientService {
 
     @Autowired
     ClientRepository clientRepository;
