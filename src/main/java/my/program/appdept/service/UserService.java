@@ -46,7 +46,7 @@ public class UserService {
      */
     public ApiResponse addUser(UserDto userDto) {
 
-        boolean existPhoneNumber = userRepository.existsByPhoneNumber(userDto.getLogin());
+        boolean existPhoneNumber = userRepository.existsByPhoneNumber(userDto.getPhoneNumber());
         if (existPhoneNumber)
             return new ApiResponse(false, "this phone number already exist!");
 
@@ -85,7 +85,7 @@ public class UserService {
         if (optionalUser.isEmpty())
             return new ApiResponse(false, "user not found!");
 
-        boolean existPhoneNumber = userRepository.existsByPhoneNumberAndIdNot(userDto.getLogin(), id);
+        boolean existPhoneNumber = userRepository.existsByPhoneNumberAndIdNot(userDto.getPhoneNumber(), id);
         if (existPhoneNumber)
             return new ApiResponse(false, "this phone number already exist!");
 
